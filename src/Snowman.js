@@ -74,16 +74,21 @@ function Snowman({
     ));
   }
 
+  const finalResult = nWrong >= maxWrong ? 'You Lose' : generateButtons();
+  const showAnswer = nWrong >= maxWrong ? answer : guessedWord()
 
   return (
       <div className="Snowman">
         <img src={(images)[nWrong]} alt={nWrong} />
         <p>Number wrong: {nWrong}</p>
-        <p className="Snowman-word">{guessedWord()}</p>
-        <p>{generateButtons()}</p>
+        <p className="Snowman-word">{showAnswer}</p>
+        <h3>{finalResult}</h3>
+
       </div>
   );
 }
 
 
 export default Snowman;
+
+/* <p className='finalResult'>{finalResult}</p> */
